@@ -26,9 +26,8 @@ fn battery(args: &Vec<String>) -> String {
         return battery_usage(args);
     }
 
-    let state = &args[2].to_lowercase();
-    let per_str = &args[3];
-    let level:u32 = per_str.parse().unwrap();
+    let state = args[2].to_lowercase();
+    let level:u32 = args[3].parse().unwrap();
 
     if state == "charging" {
         return " ".to_string();
