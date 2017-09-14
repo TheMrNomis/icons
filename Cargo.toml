@@ -1,0 +1,6 @@
+[package]
+name = "icons"
+version = "0.1.0"
+authors = ["Amaury Louarn <amaury.louarn@inria.fr>"]
+
+[dependencies]
