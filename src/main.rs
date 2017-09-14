@@ -1,5 +1,5 @@
 fn icon_types() -> String {
-    "Icon types: battery, wifi".to_string()
+    "Icon types: battery, wifi, volume".to_string()
 }
 
 fn main() {
@@ -13,6 +13,7 @@ fn main() {
     println!("{}", match icon_type.as_ref() {
         "battery" => battery(&args),
         "wifi" => wifi(),
+        "volume" => volume(&args),
         _ => icon_types(),
     })
 }
@@ -49,4 +50,29 @@ fn battery(args: &Vec<String>) -> String {
 
 fn wifi() -> String {
     " ".to_string()
+}
+
+fn volume_usage(args: &Vec<String>) -> String {
+    format!("Usage: {} {} muted percentage", args[0], args[1])
+}
+
+fn volume(args: &Vec<String>) -> String {
+    if args.len() < 2 {
+        return volume_usage(args);
+    }
+
+    let muted = args[2].to_lowercase();
+    let level:u32 = args[3].parse().unwrap();
+
+    if muted == "muted" {
+        return " ".to_string();
+    }
+
+    if level == 0 {
+        return " ".to_string();
+    } else if level < 50 {
+        return " ".to_string();
+    } else {
+        return " ".to_string();
+    }
 }
