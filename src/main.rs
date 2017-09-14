@@ -1,5 +1,5 @@
 fn icon_types() -> String {
-    "Icon types: battery".to_string()
+    "Icon types: battery, wifi".to_string()
 }
 
 fn main() {
@@ -12,6 +12,7 @@ fn main() {
     let icon_type = &args[1].to_lowercase();
     println!("{}", match icon_type.as_ref() {
         "battery" => battery(&args),
+        "wifi" => wifi(),
         _ => icon_types(),
     })
 }
@@ -45,4 +46,8 @@ fn battery(args: &Vec<String>) -> String {
     } else {
         return " ".to_string();
     }
+}
+
+fn wifi() -> String {
+    " ".to_string()
 }
