@@ -32,6 +32,8 @@ fn battery(args: &Vec<String>) -> String {
 
     if state == "charging" {
         return " ".to_string();
+    } else if state == "full" {
+        return "FULL".to_string();
     }
 
     //on battery
