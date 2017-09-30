@@ -1,5 +1,5 @@
 fn icon_types() -> String {
-    "Icon types: battery, wifi, volume".to_string()
+    "Icon types: battery, wifi, volume, calendar, clock".to_string()
 }
 
 fn main() {
@@ -14,6 +14,8 @@ fn main() {
         "battery" => battery(&args),
         "wifi" => wifi(),
         "volume" => volume(&args),
+        "calendar" => calendar(),
+        "clock" => clock(),
         _ => icon_types(),
     })
 }
@@ -77,4 +79,12 @@ fn volume(args: &Vec<String>) -> String {
     } else {
         return " ".to_string();
     }
+}
+
+fn calendar() -> String {
+    " ".to_string()
+}
+
+fn clock() -> String {
+    " ".to_string()
 }
